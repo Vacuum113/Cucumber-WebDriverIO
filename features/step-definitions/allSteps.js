@@ -36,11 +36,11 @@ When("User select the option  {int} with the value {string} for element select: 
     browser.waitUntil(function() {
         return (versionSelect = $(string2));
     }, 5000);
-    versionSelecter.click();
+    versionSelect.click();
 
     let optionTag;
     browser.waitUntil(function() {
-        return (optionTag = versionSelecter.$$('option')[int1]);
+        return (optionTag = versionSelect.$$('option')[int1]);
     }, 5000);
     optionTag.click();
 });
