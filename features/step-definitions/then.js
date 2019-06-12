@@ -25,13 +25,7 @@ Then('User expect to see a notification that this is the old version {int} of th
 
     browser.pause(3000);
 
-    let notification = $('body > div:nth-child(9)');
-
-    if (+counter !== 1)
-        notification = $('body > div:nth-child(7)');
-    else if (+counter !== 2) {
-        notification = $('body > div:nth-child(7)');
-    }
+    let notification = $('=click here.');
 
     assert.equal(notification.$('a').getText(), 'click here.');
 });
@@ -40,16 +34,11 @@ Then('Also user expect to see link to a newer version of API documentation. {int
 
     browser.pause(3000);
 
-    let notificationLink = $('body > div:nth-child(9)').$('a');
-
-    if (+counter !== 1)
-        notificationLink = $('body > div:nth-child(7)');
-    else if (+counter !== 2) {
-        notificationLink = $('body > div:nth-child(7)');
-    }
+    let notificationLink = $('=click here.');
 
     notificationLink.click();
 
+    browser.switchTab(browser.getTabIds()[0]);
     browser.switchTab(browser.getTabIds()[1]);
 
     browser.waitUntil(function() {
