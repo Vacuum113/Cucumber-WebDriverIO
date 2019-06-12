@@ -6,7 +6,7 @@ When("User selects the Learn link in the navigation bar", function() {
     let linkLearn;
 
     browser.waitUntil(function() {
-        return ($('.learn').$('a').getText() === "Обучение");
+        return ($('.learn').$('a').getText() === "Learn");
     }, 5000);
     linkLearn = $('.learn').$('a');
 

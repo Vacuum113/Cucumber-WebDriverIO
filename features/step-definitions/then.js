@@ -23,7 +23,9 @@ Then("User expects to receive API version {string} documentation on the site wit
 
 Then('User expect to see a notification that this is the old version {int} of the API', function(counter) {
 
-    browser.pause(3000);
+    browser.waitUntil(function() {
+        return $('=click here.').getText() === 'click here.';
+    }, 5000);
 
     let notification = $('=click here.');
 
@@ -31,8 +33,9 @@ Then('User expect to see a notification that this is the old version {int} of th
 });
 
 Then('Also user expect to see link to a newer version of API documentation. {int}', function(counter) {
-
-    browser.pause(3000);
+    browser.waitUntil(function() {
+        return $('=click here.').getText() === 'click here.';
+    }, 5000);
 
     let notificationLink = $('=click here.');
 

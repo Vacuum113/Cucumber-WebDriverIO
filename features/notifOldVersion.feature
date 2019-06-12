@@ -4,7 +4,7 @@ Feature: Old version of the documentation API should display a notification
   Also there should be a link to a newer version of API documentation
 
   Scenario Outline: Notification should be displayed
-    Given User open the site: "https://ru.vuejs.org"
+    Given User open the site: "https://vuejs.org"
     When User selects the Learn link in the navigation bar
     And User clicks on the API link in the drop-down menu
     And User select the option  <counter> with the value <number> for element select: '.version-select'
