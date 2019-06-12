@@ -6,8 +6,9 @@ When("User selects the Learn link in the navigation bar", function() {
     let linkLearn;
 
     browser.waitUntil(function() {
-        return (linkLearn = $$('li.nav-dropdown-container')[0].$('a')).getText() === "Learn";
+        return ($('.learn').$('a').getText() === "Обучение");
     }, 5000);
+    linkLearn = $('.learn').$('a');
 
     linkLearn.moveToObject();
 });
@@ -16,8 +17,9 @@ When("User clicks on the API link in the drop-down menu", function() {
     let linkAPI;
 
     browser.waitUntil(function() {
-        return (linkAPI = $$('li.nav-dropdown-container')[0].$('ul').$$('a.nav-link')[1]).getText() === "API";
+        return $('=API').getText() === "API";
     }, 5000);
+    linkAPI = $('=API');
 
     linkAPI.moveToObject();
     linkAPI.click();
